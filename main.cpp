@@ -2,10 +2,10 @@
 
 #include <QApplication>
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[]) // Running on program thread
 {
-    QApplication a(argc, argv);
-    Li_GUI w;
-    w.show();
-    return a.exec();
+    QApplication a(argc, argv); // Creating GUI thread
+    Li_GUI window;
+    window.show();
+    return a.exec(); // Running GUI thread
 }
