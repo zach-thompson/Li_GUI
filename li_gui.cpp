@@ -34,7 +34,7 @@ void Li_GUI::on_browseButton_clicked()
     emit gotPath(qPath);
 }
 
-
+// returns selected file path
 QString Li_GUI::getPath(QString Path){
     this->qPath = Path;
     return qPath;
@@ -49,12 +49,13 @@ void Li_GUI::on_browseButton_2_clicked()
     emit gotSavePath(savePath);
 }
 
+// returns selected save location
 QString Li_GUI::getSavePath(QString Path){
     this->savePath = Path;
     return savePath;
 }
 
-// monitors the "Run" button that initiates the program
+// monitors the "Run" button that initiates the program, emits run signal
 void Li_GUI::on_runButton_clicked()
 {
     emit runPressed(qPath, savePath);

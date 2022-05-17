@@ -12,7 +12,6 @@ class workThread : public QObject {
     Q_OBJECT
 
 public:
-    //create algorithm object here
 
 public slots:
     void algorithm(QString path, QString savePath) {
