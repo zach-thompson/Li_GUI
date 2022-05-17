@@ -8,11 +8,4 @@ int main(int argc, char *argv[]) // Running on program thread
     Li_GUI window;
     window.show();
     return a.exec(); // Running GUI thread
-
-    workThread li;
-    Li_GUI gui;
-
-    std::string path = gui.readPath();
-    li.algorithm(path);
-
 }

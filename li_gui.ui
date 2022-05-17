@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>537</width>
-    <height>171</height>
+    <height>230</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,9 @@
    <widget class="QLabel" name="is_running">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>50</y>
-      <width>63</width>
+      <x>120</x>
+      <y>70</y>
+      <width>91</width>
       <height>20</height>
      </rect>
     </property>
@@ -31,21 +31,55 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>40</y>
-      <width>298</width>
-      <height>31</height>
+      <y>41</y>
+      <width>279</width>
+      <height>105</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLabel" name="path_label">
-       <property name="text">
-        <string>Folder Path:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="lineEdit"/>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="path_label">
+         <property name="text">
+          <string>File Select</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEdit"/>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="browseButton">
+         <property name="text">
+          <string>Browse</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="path_label_2">
+         <property name="text">
+          <string>Save Location</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEdit_2"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="browseButton_2">
+         <property name="text">
+          <string>Browse</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <widget class="QPushButton" name="runButton">

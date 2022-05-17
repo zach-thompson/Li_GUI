@@ -5,23 +5,26 @@
 #include <QFile>
 #include <QDebug>
 #include <QThread>
-//#include "C/algorithm.cpp"
-//#include "C/run_algorithm.sh"
+#include <QFileDialog>
+//#include "Li_files/algorithm.cpp"
 
 class workThread : public QObject {
     Q_OBJECT
 
-public slots:
-    void algorithm(std::string path) {
-        // run_algorithm.sh with argument "path"
-        QString ran("Done");
+public:
+    //create algorithm object here
 
-        qDebug() << "Done";
-        emit ranAlgorithm(ran);
+public slots:
+    void algorithm(QString path, QString savePath) {
+        qDebug() << "algorithm reached";
+        qDebug() << "Path: " << path;
+        qDebug() << "Save path: " << savePath;
+        //mor_processing::Algorithm  alg(15, 15, path, savePath);
+        //alg.run();
     }
 
 signals:
-    void ranAlgorithm(QString &ran);
+
 };
 
 namespace Ui { class Li_GUI; }
@@ -36,14 +39,20 @@ public:
     ~Li_GUI();
 
 private slots:
+    void on_browseButton_clicked();
+    QString getPath(QString qPath);
+    void on_browseButton_2_clicked();
+    QString getSavePath(QString savePath);
     void on_runButton_clicked();
-    std::string readPath();
-    void didItWork(QString &ran);
 
 signals:
-    void buttonPressed();
+    void gotPath(QString qPath);
+    void gotSavePath(QString savePath);
+    void runPressed(QString qPath, QString savePath); // Connected to
 
 private:
     Ui::Li_GUI *ui;
+    QString qPath;
+    QString savePath;
 };
 #endif // LI_GUI_H
